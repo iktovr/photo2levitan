@@ -1,9 +1,13 @@
 /** @type {import('next').NextConfig} */
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
-  assetPrefix: '/photo2levitan/',
+  assetPrefix: isProd ? '/photo2levitan/' : '',
+  images: {
+    unoptimized: true,
+  },
   reactStrictMode: true,
   //distDir: 'build',
   webpack: (config, {  }) => {
