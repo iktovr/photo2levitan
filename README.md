@@ -7,18 +7,21 @@
 CycleGAN реализован согласно описаниям в [оригинальной статье](https://arxiv.org/abs/1703.10593) и обучен по рекомендациям оттуда же. Подробности обучения доступны в ipynb в соответствующей [директории](./notebooks). Итоговые модели (а также неудачные варианты задач) доступны по [ссылке](https://drive.google.com/drive/folders/1BOUIr0E9oCnuIFYmpFEoJd4VYYTcxNL2?usp=sharing).
 
 ### Результаты
-Результаты, полученные на изображениях из используемых датасетов (верхний ряд - реальные изображения, нижний - результат генерации):
+Результаты, полученные в процессе обучения (верхний ряд - реальные изображения, нижний - результат генерации):
 ![](./img/results.png)
 
 Результаты преобразования различных фотографий в картины:
 
-<img src="./img/photo1.jpg" width="60%"/>
-<img src="./img/photo2.jpg" width="60%"/>
-<img src="./img/photo3.jpg" width="60%"/>
+<p align="center">
+	<img src="./img/photo1_orig.jpg" width="49%"/> <img src="./img/photo1.jpg" width="49%"/>
+	<img src="./img/photo2_orig.jpg" width="49%"/> <img src="./img/photo2.jpg" width="49%"/>
+	<img src="./img/photo3_orig.jpg" width="49%"/> <img src="./img/photo3.jpg" width="49%"/>
+</p>
 
 ### Генерация
 Генерация изображений доступна в двух местах:
-* Веб-версия - [https://iktovr.github.io/photo2levitan/](https://iktovr.github.io/photo2levitan/) - генерирует изображения размера 256x256
+
+* Веб-приложение - [https://iktovr.github.io/photo2levitan/](https://iktovr.github.io/photo2levitan/) - генерирует изображения размера 256x256 (**генерация происходит на стороне клиента**)
 * Телеграм бот - [@photo2levitan_bot](https://t.me/photo2levitan_bot) - поддерживает изображения любого размера, но приводит их к размеру 512 по меньшей стороне
 
-<!-- Подробности реализации описаны в соответствующих ветках -->
+Подробности реализации приведены в соответствующих ветках
