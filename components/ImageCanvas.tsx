@@ -17,13 +17,13 @@ const ImageCanvas = (props: Props) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const canvasOutRef = useRef<HTMLCanvasElement>(null);
   const [resultLabel, setLabel] = useState("");
-  const [inferenceTime, setInferenceTime] = useState("");
 
   // Draw image and other  UI elements then run inference
   const displayImageAndRunInference = () => { 
     // Clear out previous values.
     setLabel(`Inferencing...`);
-    setInferenceTime("");
+    canvasRef.current!.getContext('2d')!.clearRect(0, 0, props.width, props.height);
+    canvasOutRef.current!.getContext('2d')!.clearRect(0, 0, props.width, props.height);
    
     // Run the inference
     submitInference();
@@ -48,8 +48,7 @@ const ImageCanvas = (props: Props) => {
     displayImageData(tensorToImageData(resultTensor), canvasOutRef.current!);
 
     // Update the label and confidence
-    setLabel("");
-    setInferenceTime(`Inference time: ${inferenceTime} seconds`);
+    setLabel(`Inference time: ${inferenceTime} seconds`);
   };
 
   const selectFile = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -80,7 +79,6 @@ const ImageCanvas = (props: Props) => {
         <canvas className={styles.cv} ref={canvasOutRef} width={props.width} height={props.height} />
       </div>
       <span>{resultLabel}</span>
-      <span>{inferenceTime}</span>
     </>
   )
 
