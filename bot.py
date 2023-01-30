@@ -31,9 +31,9 @@ def generate(image):
     return Image.fromarray(((tensor.detach().numpy().transpose(1, 2, 0) + 1) / 2 * 255).astype('uint8'))
 
 
-@dp.message(commands=["start"])
+@dp.message(commands=["ping"])
 async def cmd_start(message: types.Message):
-    await message.answer("Hello!")
+    await message.answer("alive")
 
 
 @dp.message(content_types="photo")
